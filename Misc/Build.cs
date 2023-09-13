@@ -397,11 +397,11 @@ namespace SingleDose.Misc
                     p.StartInfo.FileName = SettingsMenu.SelectedCompilerPath;
                     if (!IsUnsafe)
                     {
-                        p.StartInfo.Arguments = string.Format(" -out:{0} {1}", binPath, CSFile);
+                        p.StartInfo.Arguments = string.Format("/target:winexe -out:{0} {1}", binPath, CSFile);
                     }
                     else if (IsUnsafe)
                     {
-                        p.StartInfo.Arguments = string.Format(" -unsafe -out:{0} {1}", binPath, CSFile);
+                        p.StartInfo.Arguments = string.Format("/target:winexe -unsafe -out:{0} {1}", binPath, CSFile);
                     }
                     p.StartInfo.RedirectStandardOutput = true;
                     p.StartInfo.UseShellExecute = false;
